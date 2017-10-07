@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>css loading</title>
+</head>
+
+<div id="container" style="overflow:hidden;">
+    <iframe border="0" id="content" src="./src/index.html" frameborder="0"
+            height="100%" width="100%" style="height: 269px;"></iframe>
+</div>
+<script type="text/javascript" src="./src/jquery-1.4.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var iframeHeight = function () {
+            var _height = $(window).height() - 34;
+            $('#content').height(_height);
+        }
+        window.onresize = iframeHeight;
+        $(function () {
+            iframeHeight();
+        });
+
+    });
+</script>
+</body>
+</html>
